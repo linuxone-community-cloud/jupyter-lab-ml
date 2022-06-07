@@ -81,7 +81,7 @@ Note: Refer the official documentation from IBM LinuxONE Community Cloud  [here]
     ```ssh -i <your_key>.pem linux1@148.100.xx.xx```
 
 4. Download the latest docker installer script and run it
-    ```curl -fsSL https://test.docker.com -o test-docker.sh && sudo sh test-docker.sh```
+    ```curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh```
 5. Add current user to the docker goup and grant permissions
 
     ```sudo usermod -aG docker $USER; newgrp docker```
