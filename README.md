@@ -1,6 +1,6 @@
 # Running AI/ML in Jupyter Lab on IBM LinuxONE/zSystems servers
 ## Overview
-The following guidelines can be used to explore Machine Learning applications using Jupyter Lab and Python ML libraries for IBM LinuxONE/zSystems. IBM LinuxONE/zSystems servers are designed to be more powerful than x86, through a combination of processor architecture, clock speed, cache, optimization, and I/O offloading. IBM z16 generation comes with Telum central processor with a new dedicated on-chip accelerator for AI inference. This design enables real time AI/ML processing embedded directly in transactional workloads. Jupyter Lab is packaged as a container that includes popular ML libraries such as Keras, Tensorflow, PyTorch ans SciKit-Learn. It also comes with several ML examples and sample data to train and validate the models.   
+The following guidelines can be used to explore Machine Learning applications using Jupyter Lab and Python ML libraries for IBM LinuxONE/zSystems. IBM LinuxONE/zSystems servers are designed to be more powerful than x86, through a combination of processor architecture, clock speed, cache, optimization, and I/O offloading. IBM z16 generation comes with Telum central processor with a new dedicated on-chip accelerator for AI inference. This design enables real time AI/ML processing embedded directly in transactional workloads. Jupyter Lab is packaged as a container that includes popular ML libraries such as Keras, Tensorflow, PyTorch, XGBoost, and SciKit-Learn. It also comes with several ML examples and sample data to train and validate the models.   
 
    1. The first example demonstrates a client retention analysis using SciKit-Learn.
    2. The second example demonstrates MNIST handwritten digits recogniton using Keras and Tensorflow.
@@ -12,15 +12,14 @@ The following guidelines can be used to explore Machine Learning applications us
 ## Steps
 
 1. Register in LinuxONE Community Cloud
-2. Log in to the Self Service Portal.
-3. Create your Ubuntu 20.04 instance
-4. Open a secure shell connection and install docker runtime
-5. Start Jupyter Lab container on the port 38888
-6. Open Jupyter Lab in the Browser using the public IP address of your instance
-7. Run Demo notebooks 
-8. Use case #1: Run a client retention analysis notebook.
-9. Use case #2: Run a MNIST handwritten digits recogniton notebook.
-10. Use case #3: Export the trained model to a portable ONNX format.
+2. Create your Ubuntu 20.04 instance and ssh key
+3. Open a secure shell connection and install docker runtime
+4. Start Jupyter Lab container on the port 38888
+5. Open Jupyter Lab in the Browser using the public IP address of your instance
+6. Run Demo notebooks 
+7. Use case #1: Run a client retention analysis notebook.
+8. Use case #2: Run a MNIST handwritten digits recogniton notebook.
+9. Use case #3: Export the trained model to a portable ONNX format.
 
 ## Step 1. Sign up for an IBM LinuxONE Community Cloud account
 
@@ -35,6 +34,8 @@ Note: Refer the official documentation from IBM LinuxONE Community Cloud  [here]
 
 ## Step 2. Log in to the Self Service Portal
 
+Note: For details or troubleshooting refer the official documentation from IBM LinuxONE Community Cloud  [here](https://ibm.biz/BdPcL8)
+
 1. Open a web browser and access the [IBM LinuxONE Community Cloud](https://linuxone.cloud.marist.edu/). 
    
     a. Enter your Portal User ID and Portal Password
@@ -46,9 +47,11 @@ Note: Refer the official documentation from IBM LinuxONE Community Cloud  [here]
 
     b. Next click your **username** from the upper right corner of the Home page.
 
-    c. Select **Manage SSH Key Pairs** and import your key for accessing the Linux VMs.
+    c. Select **Manage SSH Key Pairs** and import your key or create one for accessing the Linux VMs.
 
 ## Step 3. Create your Ubuntu 20.04 instance of Linux VM
+
+Note: For details or troubleshooting refer the official documentation from IBM LinuxONE Community Cloud  [here](https://ibm.biz/BdPcL8)
 
 1. Deploying LinuxONE virtual server.
     a. Go to the **Home page**, **Service Catalog** section and **Virtual Servers** service.
@@ -74,6 +77,7 @@ Note: Refer the official documentation from IBM LinuxONE Community Cloud  [here]
 
     - On Mac OS X or Linux use Terminal.
     - On Windows use PuTTY.
+    Note: Instructions on how to use ssh terminal or PuTTY can be found here [here](https://ibm.biz/BdPcL8)
 
 2. Ensure that you have the SSH private key used to deploy the server. 
     
@@ -100,13 +104,19 @@ In this section, you will use the Jupyter Lab tool that is installed in containe
     ```docker pull registry.linuxone.cloud.marist.edu/jupyterlab-image-s390x:latest```
 3. Start the Jupyer Lab container on port 38888
 ```
-    docker run -p 38888:8888 --name notebook -v /home/linux1/jupyter:/home/jovyan/shared \
-    -d registry.linuxone.cloud.marist.edu/jupyterlab-image-s390x:latest jupyter lab --ServerApp.token='Your_Tocken' 
+    mkdir shared && chmod a+w shared
+
+    docker run -p 38888:8888 --name notebook -v /home/linux1/shared:/home/jovyan/shared \
+    -d registry.linuxone.cloud.marist.edu/jupyterlab-image-s390x:latest jupyter lab --ServerApp.token='Your_Token' 
+
 ``` 
 
 ## Step 6. Open Jupyter Lab in the Browser using the public IP address of your instance
-    URL: http://148.100.X.X:38888
-    The first page requires you to authenticate before getting to the main Jupyter Lab IDE. Tocken is the one you specified in the docker run command: Your_Tocken
+   ``` URL: http://148.100.X.X:38888```
+    The first page requires you to authenticate before getting to the main Jupyter Lab IDE. Tocken is the one you specified in the docker run command: Your_Token
+
+![alt text](images/jupyter_login.png "ML_Demo")
+
 ## Step 7. Run Demo notebooks 
 Jupyter Lab container comes with 2 demo notebooks and sample data. Once in the Jupyter Lab IDE, left side panel lists the notebooks and CSV data files. Click on each of them to open in the right side panel. 
 ## Step 8. Use case #1: Run a client retention analysis notebook.
@@ -164,6 +174,74 @@ The environment is divided into input cells labeled with **‘In [#]:’**.
 Both Demo notebooks contain steps to export the trained ML model into portable open format ONNX. sklearn-onnx and tf2onnz convert models in ONNX format which can be then used to compute predictions with another backend on a different platform. Such as training can be done on an x86 system and then inference on IBM LinuxONE. 
 
 ![alt text](images/model-to-onnx.png "Model export to ONNX")
+
+
+# Frequently Asked Questions
+### 1. Docker gives permission error. How to resolve it?
+e.g. ```docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock```
+After a fresh installation of docker, it configures permissions and environment. For some settings to take an effect,  you need to reload the shell (exec bash) or reestablish the ssh session. 
+### 2. Jupyter Lab gives permission error for the ”shared” folder
+The folder is mounted from the host. Need to make sure that the user with uid 1000 has write access to it. E.g.Run this command on the Linux instance
+	```sudo chown -R 1000:1000 /home/linux1/jupyter```
+### 3. Cannot get my jupyter lab container working. How to re-deploy it? 
+```
+    docker logs notebook
+    docker rm -f notebook
+    docker run …..
+```
+### 4. How can I get a list of files uploaded to IBM LinuxONE environment?
+In Jupiter notebook, type:
+```
+    import glob
+    print(glob.glob("*.csv"))
+```
+### 5. How can I install a missing package from pypi?
+```
+    import sys
+    !{sys.executable} -m pip install tensorflow_datasets
+```
+### 6. How can I upload my data and notebook to IBM LinuxONE environment
+Upload files in the Jupyter Lab Web interface. Drag&Drop is also possible.
+	CSV files are supported.
+	Max file size is 200MB.
+### 7. Where can I see the list of available packages?
+https://github.com/linuxone-community-cloud/jupyter-lab-ml/blob/main/packages.txt
+Or in Jupiter notebook, type:
+```
+    import pkg_resources
+    for i in pkg_resources.working_set:
+        print(i)
+```
+### 8. I ran out of disk space on my Linux Virtual Server. How can I free it up ?
+You can clean up unused docker images to free up space:
+```
+    docker images -a
+    docker rmi $(docker images –qa)
+```
+### 9. I have created the Ubuntu instance, but facing issue in opening ssh and installing docker runtime. 
+Make sure to follow the required steps. Re-login to ssh.
+```
+	ssh -i <your_key>.pem linux1@148.100.xx.xx
+	curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh
+	sudo usermod -aG docker $USER; newgrp docker
+	sudo systemctl start docker
+	exec bash   # or exit and reconnect via ssh 
+```
+### 10. I receive memory error, when we try to do some big computation.
+Use the following commands in ssh shell to validate the memory usage:
+```
+    docker stats
+    free -h
+```
+### 11. How do I transfer multiple files and folders to Jupyter lab?  
+To copy files from your laptop to the home of linuxone instance, use scp - secure shell copy.  
+
+E.g. *.csv files
+	```scp -i sshkey.pem ./*.csv linux1@148.100.X.X:~/shared/```
+
+the files/folders in ~/shared/ (which is also /home/linux1/shared) 
+will appear in the jupyter lab interface under "shared" folder. 
+
 
 
 
