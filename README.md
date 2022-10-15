@@ -177,34 +177,53 @@ Both Demo notebooks contain steps to export the trained ML model into portable o
 
 
 # Frequently Asked Questions
-### 1. Docker gives permission error. How to resolve it?
+### 1. I registered in LinuxONE Community Cloud (L1CC) and have not received my registration email?
+Did you use the event code assigned for this specific event when registering for your Virtual Machine? 
+Also, check your spam/junk folder for the activation email.
+### 2. I registered for a Virtual Machine on L1CC but cannot access it ?
+A: You need to activate your account by clicking the link on the activation email to be able to access your virtual machine 
+### 3. My server is not responding / I am not able to ping my server?
+A:  If a server does not respond to ping or ssh the server needs to be stopped and restarted in L1CC dashboard.
+- Log into the dashboard (same dashboard used to create the server.
+https://linuxone.cloud.marist.edu/#/login
+![alt text](https://github.com/linuxone-community-cloud/technical-resources/raw/master/faststart/images-deploy/ssp-login.png "Login to L1CC")
+- Click “manage instances”
+![alt text](https://github.com/linuxone-community-cloud/technical-resources/raw/master/faststart/images-deploy/manage-instances.png "Manage VM instances")
+
+- If your server is green and active status but will not respond to ping or ssh select your server and click stop.  Once status goes to SHUTOFF, select server again and click start.  This will resolve the issue.
+ ![alt text](https://github.com/linuxone-community-cloud/technical-resources/raw/master/faststart/images-deploy/create-server.png "Stop Start VM instances")
+
+### 4. How to ssh to my Virtual Machine?
+A:   Follow the steps provided in the Github link shared – the documentation has detailed steps on how to get connected with Putty and ssh terminal. 
+
+### 5. Docker gives permission error. How to resolve it?
 e.g. ```docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock```
 After a fresh installation of docker, it configures permissions and environment. For some settings to take an effect,  you need to reload the shell (exec bash) or reestablish the ssh session. 
-### 2. Jupyter Lab gives permission error for the ”shared” folder
+### 6. Jupyter Lab gives permission error for the ”shared” folder
 The folder is mounted from the host. Need to make sure that the user with uid 1000 has write access to it. E.g.Run this command on the Linux instance
 	```sudo chown -R 1000:1000 /home/linux1/jupyter```
-### 3. Cannot get my jupyter lab container working. How to re-deploy it? 
+### 7 Cannot get my jupyter lab container working. How to re-deploy it? 
 ```
     docker logs notebook
     docker rm -f notebook
     docker run …..
 ```
-### 4. How can I get a list of files uploaded to IBM LinuxONE environment?
+### 8. How can I get a list of files uploaded to IBM LinuxONE environment?
 In Jupiter notebook, type:
 ```
     import glob
     print(glob.glob("*.csv"))
 ```
-### 5. How can I install a missing package from pypi?
+### 9. How can I install a missing package from pypi?
 ```
     import sys
     !{sys.executable} -m pip install tensorflow_datasets
 ```
-### 6. How can I upload my data and notebook to IBM LinuxONE environment
+### 10. How can I upload my data and notebook to IBM LinuxONE environment
 Upload files in the Jupyter Lab Web interface. Drag&Drop is also possible.
 	CSV files are supported.
 	Max file size is 200MB.
-### 7. Where can I see the list of available packages?
+### 11. Where can I see the list of available packages?
 https://github.com/linuxone-community-cloud/jupyter-lab-ml/blob/main/packages.txt
 Or in Jupiter notebook, type:
 ```
@@ -212,13 +231,13 @@ Or in Jupiter notebook, type:
     for i in pkg_resources.working_set:
         print(i)
 ```
-### 8. I ran out of disk space on my Linux Virtual Server. How can I free it up ?
+### 12. I ran out of disk space on my Linux Virtual Server. How can I free it up ?
 You can clean up unused docker images to free up space:
 ```
     docker images -a
     docker rmi $(docker images –qa)
 ```
-### 9. I have created the Ubuntu instance, but facing issue in opening ssh and installing docker runtime. 
+### 13. I have created the Ubuntu instance, but facing issue in opening ssh and installing docker runtime. 
 Make sure to follow the required steps. Re-login to ssh.
 ```
 	ssh -i <your_key>.pem linux1@148.100.xx.xx
@@ -227,13 +246,13 @@ Make sure to follow the required steps. Re-login to ssh.
 	sudo systemctl start docker
 	exec bash   # or exit and reconnect via ssh 
 ```
-### 10. I receive memory error, when we try to do some big computation.
+### 14. I receive memory error, when we try to do some big computation.
 Use the following commands in ssh shell to validate the memory usage:
 ```
     docker stats
     free -h
 ```
-### 11. How do I transfer multiple files and folders to Jupyter lab?  
+### 15. How do I transfer multiple files and folders to Jupyter lab?  
 To copy files from your laptop to the home of linuxone instance, use scp - secure shell copy.  
 
 E.g. *.csv files
@@ -242,6 +261,13 @@ E.g. *.csv files
 the files/folders in ~/shared/ (which is also /home/linux1/shared) 
 will appear in the jupyter lab interface under "shared" folder. 
 
+### 16. Getting an Error uploading/creating files in shared folder of Jupyter interface.
+
+Need to modify folder permissions in ssh terminal:
+```
+sudo chown linux1:linux1 /home/linux1/shared
+sudo chmod a+w /home/linux1/shared
+```
 
 
 
