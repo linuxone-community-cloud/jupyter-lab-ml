@@ -256,7 +256,7 @@ Use the following commands in ssh shell to validate the memory usage:
 To copy files from your laptop to the home of linuxone instance, use scp - secure shell copy.  
 
 E.g. *.csv files
-	```scp -i sshkey.pem ./*.csv linux1@148.100.X.X:~/shared/```
+```scp -i sshkey.pem ./*.csv linux1@148.100.X.X:~/shared/```
 
 the files/folders in ~/shared/ (which is also /home/linux1/shared) 
 will appear in the jupyter lab interface under "shared" folder. 
