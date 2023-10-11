@@ -107,7 +107,7 @@ In this section, you will use the Jupyter Lab tool that is installed in containe
     mkdir shared && chmod a+w shared
 
     docker run -p 38888:8888 --name notebook -v /home/linux1/shared:/home/jovyan/shared \
-    -d registry.linuxone.cloud.marist.edu/jupyterlab-image-s390x:latest jupyter lab --ServerApp.token='L1Hackathon' 
+    -d registry.linuxone.cloud.marist.edu/jupyterlab-image-s390x:latest jupyter lab --ServerApp.token='Your_Token' 
 
 ``` 
 
