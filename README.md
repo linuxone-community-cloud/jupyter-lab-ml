@@ -12,7 +12,7 @@ The following guidelines can be used to explore Machine Learning applications us
 ## Steps
 
 1. Register in LinuxONE Community Cloud
-2. Create your Ubuntu 20.04 instance and ssh key
+2. Create your Ubuntu 22.04 instance and ssh key
 3. Open a secure shell connection and install docker runtime
 4. Start Jupyter Lab container on the port 38888
 5. Open Jupyter Lab in the Browser using the public IP address of your instance
@@ -49,7 +49,7 @@ Note: For details or troubleshooting refer the official documentation from IBM L
 
     c. Select **Manage SSH Key Pairs** and import your key or create one for accessing the Linux VMs.
 
-## Step 3. Create your Ubuntu 20.04 instance of Linux VM
+## Step 3. Create your Ubuntu 22.04 instance of Linux VM
 
 Note: For details or troubleshooting refer the official documentation from IBM LinuxONE Community Cloud  [here](https://ibm.biz/BdPcL8)
 
@@ -63,7 +63,7 @@ Note: For details or troubleshooting refer the official documentation from IBM L
     
 2. Provide instance specifications
     a. **Instance Name**, without any spaces or special characters.
-    b. Desired **Linux image** as **Ubuntu 20.04**.
+    b. Desired **Linux image** as **Ubuntu 22.04**.
     c. **SSH key** to use.
     d. Verify that all the information is correct and click **Create**.
 
