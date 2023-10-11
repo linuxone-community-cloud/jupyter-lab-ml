@@ -123,7 +123,7 @@ Jupyter Lab container comes with 2 demo notebooks and sample data. Once in the J
 
 This Demo notebook runs Random Forest ML on IBM LinuxONE accessing data from CSV files. The data in customer CSV consists of 6,001 rows of customer information.  The data in transaction CSV consists of 20,000 rows of transaction data. The data is transformed and joined in a Pandas DataFrame, which is used to perform exploratory analyses. A Random Forest algorithm is then used to predict customer churn.
 
-1. Click **'ML_LinuxONE_Demo.ipynb'**
+1. Click **'Churn_Scikit_PyTorch.ipynb'**
 
       ![alt text](images/notebook-ml-l1.png "ML_LinuxONE_Demo")
 
@@ -149,7 +149,7 @@ The environment is divided into input cells labeled with **‘In [#]:’**.
 ## Step 9. Use case #2: Run a MNIST handwritten digits recogniton notebook.
 This Demo notebook performs single digit recognition using MNIST dataset and neural network model in Tensorflow.  
 
-1. Click **'MNIST_Tensorflow.ipynb'**
+1. Click **'Digit_Class_TensorFlow.ipynb'**
 
       ![alt text](images/notebook-ml-l2.png "MNIST_Tensorflow")
 
@@ -172,8 +172,12 @@ The environment is divided into input cells labeled with **‘In [#]:’**.
     Continue stepping trhouth the notebook
 ## Step 10. Use case #3: Export the trained model to a portable ONNX format.
 Both Demo notebooks contain steps to export the trained ML model into portable open format ONNX. sklearn-onnx and tf2onnz convert models in ONNX format which can be then used to compute predictions with another backend on a different platform. Such as training can be done on an x86 system and then inference on IBM LinuxONE. 
-
 ![alt text](images/model-to-onnx.png "Model export to ONNX")
+
+## Step 11. Use case #3: Run a notebook with LSTM model to detech fraudlent credit card transactions.
+This Demo notebook performs a training and validation of a credit card fraud detection model in Keras/Tensorflow.  
+ Refer **'Fraud_LSTM_Keras_TF.ipynb'** notebook and csv dataset included in the Jupyter Lab environment.   
+
 
 
 # Frequently Asked Questions
