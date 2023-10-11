@@ -174,7 +174,7 @@ The environment is divided into input cells labeled with **‘In [#]:’**.
 Both Demo notebooks contain steps to export the trained ML model into portable open format ONNX. sklearn-onnx and tf2onnz convert models in ONNX format which can be then used to compute predictions with another backend on a different platform. Such as training can be done on an x86 system and then inference on IBM LinuxONE. 
 ![alt text](images/model-to-onnx.png "Model export to ONNX")
 
-## Step 11. Use case #3: Run a notebook with LSTM model to detech fraudlent credit card transactions.
+## Step 11. Use case #3: Run a notebook with LSTM model to detect fraudlent credit card transactions.
 This Demo notebook performs a training and validation of a credit card fraud detection model in Keras/Tensorflow.  
  Refer **'Fraud_LSTM_Keras_TF.ipynb'** notebook and csv dataset included in the Jupyter Lab environment.   
 
