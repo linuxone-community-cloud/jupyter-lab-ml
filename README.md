@@ -256,6 +256,12 @@ Use the following commands in ssh shell to validate the memory usage:
     docker stats
     free -h
 ```
+Free up caches:
+```
+sudo free && sync && echo 3 > /proc/sys/vm/drop_caches && free
+```
+Restart Jupyter Kernel and Clear all outputs in the menu of Web IDE. *Menu* -> *Kernel* -> *Restart Kernel and Clear Outputs of All Cells*
+
 ### 15. How do I transfer multiple files and folders to Jupyter lab?  
 To copy files from your laptop to the home of linuxone instance, use scp - secure shell copy.  
 
