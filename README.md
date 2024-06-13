@@ -97,13 +97,13 @@ Note: For details or troubleshooting refer the official documentation from IBM L
 In this section, you will use the Jupyter Lab tool that is installed in container along with popular ML packages. This tool allows you to write and submit Python code, and view the output within a web GUI.
 
 1. Pull down the latest container image
-    ```docker pull registry.linuxone.cloud.marist.edu/jupyterlab-image-s390x:latest```
+    ```docker pull registry.linuxone.cloud.marist.edu/l1cc/jupyterlab-image-s390x:latest```
 2. Start the Jupyer Lab container on port 38888
 ```
     mkdir shared && chmod a+w shared
 
     docker run -p 38888:8888 --name notebook -v /home/linux1/shared:/home/jovyan/shared \
-    -d registry.linuxone.cloud.marist.edu/jupyterlab-image-s390x:latest jupyter lab --ServerApp.token='Your_Token' 
+    -d registry.linuxone.cloud.marist.edu/l1cc/jupyterlab-image-s390x:latest jupyter lab --ServerApp.token='Your_Token' 
 
 ``` 
 
