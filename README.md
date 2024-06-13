@@ -96,13 +96,9 @@ Note: For details or troubleshooting refer the official documentation from IBM L
 ## Step 5. Start Jupyter Lab container on the port 38888
 In this section, you will use the Jupyter Lab tool that is installed in container along with popular ML packages. This tool allows you to write and submit Python code, and view the output within a web GUI.
 
-1. Login to the private container registry in IBM LinuxONE Community Cloud
-    docker login -u l1cc registry.linuxone.cloud.marist.edu
-    (Refer event information for password)
-    ```docker login -u l1cc registry.linuxone.cloud.marist.edu```
-2. Pull down the latest container image
+1. Pull down the latest container image
     ```docker pull registry.linuxone.cloud.marist.edu/jupyterlab-image-s390x:latest```
-3. Start the Jupyer Lab container on port 38888
+2. Start the Jupyer Lab container on port 38888
 ```
     mkdir shared && chmod a+w shared
 
