@@ -91,8 +91,11 @@ Note: For details or troubleshooting refer the official documentation from IBM L
 
     ```sudo usermod -aG docker $USER; newgrp docker```
 6. Start docker service and refresh bash session 
-    ```sudo systemctl start docker```
-    ```exec bash   # or exit and reconnect via ssh```
+    ```
+    sudo systemctl start docker
+    
+    exec bash   # or exit and reconnect via ssh
+    ```
 
 ## Step 5. Start Jupyter Lab container on the port 38888
 In this section, you will use the Jupyter Lab tool that is installed in container along with popular ML packages. This tool allows you to write and submit Python code, and view the output within a web GUI.
@@ -104,7 +107,8 @@ In this section, you will use the Jupyter Lab tool that is installed in containe
     mkdir shared && chmod a+w shared
 
     docker run -p 38888:8888 --name notebook -v /home/linux1/shared:/home/jovyan/shared \
-    -d registry.linuxone.cloud.marist.edu/l1cc/jupyterlab-image-s390x:latest jupyter lab --ServerApp.token='Your_Token' 
+    -d registry.linuxone.cloud.marist.edu/l1cc/jupyterlab-image-s390x:latest \
+    jupyter lab --ServerApp.token='Your_Token' 
 
 ``` 
 
@@ -167,8 +171,8 @@ The environment is divided into input cells labeled with **‘In [#]:’**.
 
     Check the explanation of each Cell and The output from it.
     Continue stepping trhouth the notebook
-## Step 10. Use case #3: Export the trained model to a portable ONNX format.
-Both Demo notebooks contain steps to export the trained ML model into portable open format ONNX. sklearn-onnx and tf2onnz convert models in ONNX format which can be then used to compute predictions with another backend on a different platform. Such as training can be done on an x86 system and then inference on IBM LinuxONE. 
+## Step 10. Use case #3: Export the trained model to a portable PMML or ONNX format.
+Both Demo notebooks contain steps to export the trained ML model into portable open formats either PMML or ONNX. sklearn2pmml and tf2onnz convert models in portable format which can be then used to compute predictions with another backend on a different platform. Such as training can be done on an x86 system and then inference on IBM LinuxONE. 
 ![alt text](images/model-to-onnx.png "Model export to ONNX")
 
 ## Step 11. Use case #3: Run a notebook with LSTM model to detect fraudlent credit card transactions.
@@ -275,6 +279,12 @@ Need to modify folder permissions in ssh terminal:
 sudo chown linux1:linux1 /home/linux1/shared
 sudo chmod a+w /home/linux1/shared
 ```
+
+### 17. Are there any examples of AI/ML application on IBM Z ?
+
+You can explore use cases and technical resources on IBM website
+https://www.ibm.com/support/z-content-solutions/journey-to-ai-on-z/ 
+![image](https://github.com/user-attachments/assets/49bb013f-3ab4-4041-a043-48071ad4ddae)
 
 
 
