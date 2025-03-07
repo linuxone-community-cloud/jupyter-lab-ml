@@ -12,7 +12,7 @@ The following guidelines can be used to explore Machine Learning applications us
 ## Steps
 
 1. Register in LinuxONE Community Cloud
-2. Create your Ubuntu 22.04 instance and ssh key
+2. Create your Ubuntu 22.04 instance and ssh key (check [here](README_RHEL.md) for RHEL 9.3)
 3. Open a secure shell connection and install docker runtime
 4. Start Jupyter Lab container on the port 38888
 5. Open Jupyter Lab in the Browser using the public IP address of your instance
