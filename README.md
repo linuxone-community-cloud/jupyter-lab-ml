@@ -1,6 +1,6 @@
 # Running AI/ML in Jupyter Lab on IBM LinuxONE / IBM Z servers
 ## Overview
-The following guidelines can be used to explore Machine Learning applications using Jupyter Lab and Python ML libraries for IBM LinuxONE / IBM Z. IBM LinuxONE / IBM Z servers are designed to be more powerful than x86, through a combination of processor architecture, clock speed, cache, optimization, and I/O offloading. IBM z16 generation comes with Telum central processor with a new dedicated on-chip accelerator for AI inference. This design enables real time AI/ML processing embedded directly in transactional workloads. Jupyter Lab is packaged as a container that includes popular ML libraries such as Keras, Tensorflow, PyTorch, XGBoost, and SciKit-Learn. It also comes with several ML examples and sample data to train and validate the models.   
+AI/ML on IBM Z and LinuxONE lab is designed to demonstrate how popular Python frameworks and Jupyter Lab can be used on IBM Z / IBM LinuxONE. IBM LinuxONE / IBM Z servers are designed to be more powerful than x86, through a combination of processor architecture, clock speed, cache, optimization, and I/O offloading. IBM z17 generation comes with Telum II central processor with a dedicated on-chip accelerator for AI inference. This design enables real time AI/ML processing embedded directly in transactional workloads. Jupyter Lab is packaged as a container that includes popular ML libraries such as Keras, Tensorflow, PyTorch, XGBoost, and SciKit-Learn. It also comes with several ML examples and sample data to train and validate the models.
 
    1. The first example demonstrates a client retention analysis using SciKit-Learn.
    2. The second example demonstrates MNIST handwritten digits recogniton using Keras and Tensorflow.
@@ -12,7 +12,7 @@ The following guidelines can be used to explore Machine Learning applications us
 ## Steps
 
 1. Register in LinuxONE Community Cloud
-2. Create your Ubuntu 22.04 instance and ssh key (check [here](README_RHEL.md) for RHEL 9.3)
+2. Create your Ubuntu 22.04 instance and ssh key (check [here](README_RHEL.md) for RHEL 9.6)
 3. Open a secure shell connection and install docker runtime
 4. Start Jupyter Lab container on the port 38888
 5. Open Jupyter Lab in the Browser using the public IP address of your instance
