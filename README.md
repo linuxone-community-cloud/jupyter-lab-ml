@@ -2,9 +2,11 @@
 ## Overview
 AI/ML on IBM Z and LinuxONE lab is designed to demonstrate how popular Python frameworks and Jupyter Lab can be used on IBM Z / IBM LinuxONE. IBM LinuxONE / IBM Z servers are designed to be more powerful than x86, through a combination of processor architecture, clock speed, cache, optimization, and I/O offloading. IBM z17 generation comes with Telum II central processor that has a dedicated on-chip accelerator for AI inference. This design enables real time AI/ML processing embedded directly in transactional workloads. Jupyter Lab is packaged as a container that includes popular ML libraries such as Keras, Tensorflow, PyTorch, XGBoost, and SciKit-Learn. It also comes with several ML examples and sample data to train and validate the models.
 
-   1. The first example demonstrates a client retention analysis using SciKit-Learn.
-   2. The second example demonstrates MNIST handwritten digits recogniton using Keras and Tensorflow.
-   3. Both examples demonstrate exporting of the trained model to portable ONNX format for inferencing in a sample production.
+   1. First example demonstrates how LSTM model is used to detect fraudlent credit card transactions. 
+   2. Second example is a notebook with client retention analysis using SciKit-Learn.
+   3. Third example demonstrates MNIST handwritten digits recogniton using Keras and Tensorflow.
+   4. The notebooks also demonstrate exporting of the trained model to portable ONNX format for inferencing in a hypothetical production deployment.
+
 
 ## Architecture
    ![alt text](images/jupyter-lab-ml-ibmz.png "Jupyter Lab ML on IBM Z")
@@ -17,9 +19,10 @@ AI/ML on IBM Z and LinuxONE lab is designed to demonstrate how popular Python fr
 4. Start Jupyter Lab container on the port 38888
 5. Open Jupyter Lab in the Browser using the public IP address of your instance
 6. Run Demo notebooks 
-7. Use case #1: Run a client retention analysis notebook.
-8. Use case #2: Run a MNIST handwritten digits recogniton notebook.
-9. Use case #3: Export the trained model to a portable ONNX format.
+7. Example #1: Run a transactions fraud detection notebook.
+8. Example #2: Run a client retention analysis notebook.
+9. Example #3: Run a MNIST handwritten digits recogniton notebook.
+10. Example #4: Export the trained model to a portable ONNX format.
 
 ## Step 1. Sign up for an IBM LinuxONE Community Cloud account
 
@@ -121,12 +124,12 @@ In this section, you will use the Jupyter Lab tool that is installed in containe
 ## Step 7. Run Demo notebooks 
 Jupyter Lab container comes with 2 demo notebooks and sample data. Once in the Jupyter Lab IDE, left side panel lists the notebooks and CSV data files. Click on each of them to open in the right side panel. 
 
-## Step 8. Use case #1: Run a notebook with LSTM model to detect fraudlent credit card transactions.
+## Step 8. Example #1: Run a notebook with LSTM model to detect fraudlent credit card transactions.
 This Demo notebook performs a training and validation of a credit card fraud detection model in Keras/Tensorflow.  
  Refer **'Fraud_LSTM_Keras_TF.ipynb'** notebook and csv dataset included in the Jupyter Lab environment.   
 
 
-## Step 9. Use case #2: Run a client retention analysis notebook.
+## Step 9. Example #2: Run a client retention analysis notebook.
 
 This Demo notebook runs Random Forest ML on IBM LinuxONE accessing data from CSV files. The data in customer CSV consists of 6,001 rows of customer information.  The data in transaction CSV consists of 20,000 rows of transaction data. The data is transformed and joined in a Pandas DataFrame, which is used to perform exploratory analyses. A Random Forest algorithm is then used to predict customer churn.
 
@@ -153,7 +156,7 @@ The environment is divided into input cells labeled with **‘In [#]:’**.
     Continue stepping trhouth the notebook
 
 
-## Step 10. Use case #3: Run a MNIST handwritten digits recogniton notebook.
+## Step 10. Example #3: Run a MNIST handwritten digits recogniton notebook.
 This Demo notebook performs single digit recognition using MNIST dataset and neural network model in Tensorflow.  
 
 1. Click **'Digit_Class_TensorFlow.ipynb'**
@@ -178,7 +181,7 @@ The environment is divided into input cells labeled with **‘In [#]:’**.
     Check the explanation of each Cell and The output from it.
     Continue stepping trhouth the notebook
 
-## Step 11. Use case #4: Export the trained model to a portable PMML or ONNX format.
+## Step 11. Example #4: Export trained model to a portable PMML or ONNX format.
 Both Demo notebooks contain steps to export the trained ML model into portable open formats either PMML or ONNX. sklearn2pmml and tf2onnz convert models in portable format which can be then used to compute predictions with another backend on a different platform. Such as training can be done on an x86 system and then inference on IBM LinuxONE. 
 ![alt text](images/model-to-onnx.png "Model export to ONNX")
 

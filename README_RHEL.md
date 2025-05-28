@@ -47,12 +47,12 @@ In this section, you will use the Jupyter Lab tool that is installed in containe
 Jupyter Lab container comes with 2 demo notebooks and sample data. Once in the Jupyter Lab IDE, left side panel lists the notebooks and CSV data files. Click on each of them to open in the right side panel. 
 
 
-## Step 8. Use case #1: Run a notebook with LSTM model to detect fraudlent credit card transactions.
+## Step 8. Example #1: Run a notebook with LSTM model to detect fraudlent credit card transactions.
 This Demo notebook performs a training and validation of a credit card fraud detection model in Keras/Tensorflow.  
  Refer **'Fraud_LSTM_Keras_TF.ipynb'** notebook and csv dataset included in the Jupyter Lab environment.   
 
 
-## Step 9. Use case #2: Run a client retention analysis notebook.
+## Step 9. Example #2: Run a client retention analysis notebook.
 
 This Demo notebook runs Random Forest ML on IBM LinuxONE accessing data from CSV files. The data in customer CSV consists of 6,001 rows of customer information.  The data in transaction CSV consists of 20,000 rows of transaction data. The data is transformed and joined in a Pandas DataFrame, which is used to perform exploratory analyses. A Random Forest algorithm is then used to predict customer churn.
 
@@ -79,7 +79,7 @@ The environment is divided into input cells labeled with **‘In [#]:’**.
     Continue stepping trhouth the notebook
 
 
-## Step 10. Use case #3: Run a MNIST handwritten digits recogniton notebook.
+## Step 10. Example #3: Run a MNIST handwritten digits recogniton notebook.
 This Demo notebook performs single digit recognition using MNIST dataset and neural network model in Tensorflow.  
 
 1. Click **'Digit_Class_TensorFlow.ipynb'**
@@ -104,6 +104,6 @@ The environment is divided into input cells labeled with **‘In [#]:’**.
     Check the explanation of each Cell and The output from it.
     Continue stepping trhouth the notebook
 
-## Step 11. Use case #4: Export the trained model to a portable PMML or ONNX format.
+## Step 11. Example #4: Export trained model to a portable PMML or ONNX format.
 Both Demo notebooks contain steps to export the trained ML model into portable open formats either PMML or ONNX. sklearn2pmml and tf2onnz convert models in portable format which can be then used to compute predictions with another backend on a different platform. Such as training can be done on an x86 system and then inference on IBM LinuxONE. 
 ![alt text](images/model-to-onnx.png "Model export to ONNX")
