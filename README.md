@@ -114,6 +114,9 @@ In this section, you will use the Jupyter Lab tool that is installed in containe
     jupyter lab --ServerApp.token='Your_Token' 
 
 ``` 
+3. Open TCP port 38888 on the firewall: ```sudo iptables -I INPUT -p tcp --dport 38888 -j ACCEPT```
+
+4. (Optional) To make the above firewall changes persistent across reboots, run the following: ```sudo bash -c "iptables-save > /etc/sysconfig/iptables.save"```
 
 ## Step 6. Open Jupyter Lab in the Browser using the public IP address of your instance
    ``` URL: http://148.100.X.X:38888```
