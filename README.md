@@ -40,7 +40,7 @@ Note: Refer the official documentation from IBM LinuxONE Community Cloud  [here]
 
 Note: For details or troubleshooting refer the official documentation from IBM LinuxONE Community Cloud  [here](https://ibm.biz/BdPcL8)
 
-1. Open a web browser and access the [IBM LinuxONE Community Cloud](https://linuxone.cloud.marist.edu/). 
+1. Open a web browser and access the [IBM LinuxONE Community Cloud](https://linuxone.cloud.marist.edu/#/login). 
    
     a. Enter your Portal User ID and Portal Password
     b. Click **'Sign In'**
