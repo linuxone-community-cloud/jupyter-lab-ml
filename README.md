@@ -28,7 +28,7 @@ AI/ML on IBM Z and LinuxONE lab is designed to demonstrate how popular Python fr
 
 Note: Refer the official documentation from IBM LinuxONE Community Cloud  [here](https://ibm.biz/BdPcL8)
 
-1. If you have not done so already, go to [IBM LinuxONE Community Cloud](https://linuxone.cloud.marist.edu/) and register for a free trial account. 
+1. If you have not done so already, go to [IBM LinuxONE Community Cloud](https://linuxone.cloud.marist.edu/#/register?flag=VM) and register for a free trial account. 
 2. Select **Register** link. 
 3. Fill out and submit the registration form.
 **NOTE:** Use **MLZ2025** event code to get an instance with sufficient resources for ML notebooks.
