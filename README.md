@@ -31,7 +31,7 @@ Note: Refer the official documentation from IBM LinuxONE Community Cloud  [here]
 1. If you have not done so already, go to [IBM LinuxONE Community Cloud](https://linuxone.cloud.marist.edu/#/register?flag=VM) and register for a free trial account. 
 2. Select **Register** link. 
 3. Fill out and submit the registration form.
-**NOTE:** Use **MLZ2025** event code to get an instance with sufficient resources for ML notebooks.
+**NOTE:** Use **SSF2025** event code to get an instance with sufficient resources for ML notebooks.
 4. You will receive an email containing credentials to access the self-service portal. This is where you can request VM instance of Linux on IBM LinuxONE servers.
 ![alt text](images/l1cc-register.png "Registration form")
 
