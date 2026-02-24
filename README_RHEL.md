@@ -5,8 +5,9 @@ The following steps replace steps 4-17 in the main README in order to use Red Ha
 1. Open a terminal on your local computer
 
     - On Mac OS X or Linux use Terminal.
-    - On Windows use PuTTY.
-    Note: Instructions on how to use ssh terminal or PuTTY can be found here [here](https://github.com/linuxone-community-cloud/technical-resources/blob/master/faststart/PUTTY_Set_up.pdf)
+    - On Windows:
+      - Use Windows PowerShell
+      - If PowerShell is not available, you may use the 3rd party application PuTTY, details [here](https://github.com/linuxone-community-cloud/technical-resources/blob/master/faststart/PUTTY_Set_up.pdf)
 
 2. Ensure that you have the SSH private key used to deploy the server. 
     
