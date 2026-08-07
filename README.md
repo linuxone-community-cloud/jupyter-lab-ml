@@ -106,7 +106,7 @@ In this section, you will use the Jupyter Lab tool that is installed in containe
 
 1. Pull down the latest container image
     ```docker pull registry.linuxone.cloud.marist.edu/l1cc/jupyterlab-image-s390x:latest```
-2. Start the Jupyer Lab container on port 38888
+2. Start the Jupyer Lab container on port 38888. You may need to add the flag ```--security-opt seccomp=unconfined```.
 ```
     mkdir shared && chmod a+w shared
 
@@ -126,7 +126,7 @@ In this section, you will use the Jupyter Lab tool that is installed in containe
 ![alt text](images/jupyter_login.png "ML_Demo")
 
 ## Step 7. Run Demo notebooks 
-Jupyter Lab container comes with 2 demo notebooks and sample data. Once in the Jupyter Lab IDE, left side panel lists the notebooks and CSV data files. Click on each of them to open in the right side panel. 
+Jupyter Lab container comes with 4 demo notebooks and sample data. Once in the Jupyter Lab IDE, left side panel lists the notebooks and CSV data files. Click on each of them to open in the right side panel. 
 
 ## Step 8. Example #1: Run a notebook with LSTM model to detect fraudlent credit card transactions.
 This Demo notebook performs a training and validation of a credit card fraud detection model in Keras/Tensorflow.  
@@ -189,6 +189,10 @@ The environment is divided into input cells labeled with **‘In [#]:’**.
 Both Demo notebooks contain steps to export the trained ML model into portable open formats either PMML or ONNX. sklearn2pmml and tf2onnz convert models in portable format which can be then used to compute predictions with another backend on a different platform. Such as training can be done on an x86 system and then inference on IBM LinuxONE. 
 ![alt text](images/model-to-onnx.png "Model export to ONNX")
 
+## Step 12. Example #5: Run a loan approval notebook.
+This Demo notebook demonstrates a loan approval workflow on IBM LinuxONE. The notebook analyzes financial documents and relevant policies to provide a recommendation.
+
+Refer to **'Loan_Approval_Demo.ipynb'** notebook and sample data included.
 
 # Frequently Asked Questions
 ### 1. I registered in LinuxONE Community Cloud (L1CC) and have not received my registration email?
