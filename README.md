@@ -15,7 +15,7 @@ AI/ML on IBM Z and LinuxONE lab is designed to demonstrate how popular Python fr
 ## Steps
 
 1. Register in LinuxONE Community Cloud
-2. Create your Ubuntu 22.04 instance and ssh key (check [here](README_RHEL.md) for RHEL 9.6)
+2. Create your Ubuntu 24.04 instance and ssh key (check [here](README_RHEL.md) for RHEL 9.6)
 3. Open a secure shell connection and install docker runtime
 4. Start Jupyter Lab container on the port 38888
 5. Open Jupyter Lab in the Browser using the public IP address of your instance
@@ -55,7 +55,7 @@ Note: For details or troubleshooting refer the official documentation from IBM L
 
     c. Select **Manage SSH Key Pairs** and import your key or create one for accessing the Linux VMs.
 
-## Step 3. Create your Ubuntu 22.04 instance of Linux VM
+## Step 3. Create your Ubuntu 24.04 instance of Linux VM
 
 Note: For details or troubleshooting refer the official documentation from IBM LinuxONE Community Cloud  [here](https://ibm.biz/BdPcL8)
 
