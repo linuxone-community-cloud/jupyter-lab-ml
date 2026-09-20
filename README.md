@@ -5,7 +5,8 @@ AI/ML on IBM Z and LinuxONE lab is designed to demonstrate how popular Python fr
    1. First example demonstrates how LSTM model is used to detect fraudlent credit card transactions. 
    2. Second example is a notebook with client retention analysis using SciKit-Learn.
    3. Third example demonstrates MNIST handwritten digits recogniton using Keras and Tensorflow.
-   4. The notebooks also demonstrate exporting of the trained model to portable ONNX format for inferencing in a hypothetical production deployment.
+   4. Fourth example, demonstrate exporting of the trained model to portable ONNX format for inferencing in a hypothetical production deployment.
+   5. The Fifth example demonstrates xxxxxxxxxxxxxxxxxxxxxx
 
 
 ## Architecture
@@ -23,6 +24,7 @@ AI/ML on IBM Z and LinuxONE lab is designed to demonstrate how popular Python fr
 8. Example #2: Run a client retention analysis notebook.
 9. Example #3: Run a MNIST handwritten digits recogniton notebook.
 10. Example #4: Export the trained model to a portable ONNX format.
+11. Example #5: Run xxxxxxxxxxxxxxxxxx
 
 ## Step 1. Sign up for an IBM LinuxONE Community Cloud account
 
