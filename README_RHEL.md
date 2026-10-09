@@ -27,10 +27,8 @@ In this section, you will use the Jupyter Lab tool that is installed in containe
 2. Start the Jupyer Lab container on port 38888. You may need to add the flag ```--security-opt seccomp=unconfined```.
 ```
     mkdir shared && chmod a+w shared
-
-    podman run -p 38888:8888 --name notebook -v /home/linux1/shared:/home/jovyan/shared:z \
-    -d registry.linuxone.cloud.marist.edu/l1cc/jupyterlab-image-s390x:latest \
-    jupyter lab --ServerApp.token='Your_Token'
+    podman run --network host --name notebook  -v /home/linux1/shared:/home/ibm-user/shared:z \
+    -d registry.linuxone.cloud.marist.edu/l1cc/jupyterlab-image-s390x:latest
 ``` 
 
 3. Open TCP port 38888 on the firewall: ```sudo iptables -I INPUT -p tcp --dport 38888 -j ACCEPT```
@@ -40,8 +38,15 @@ In this section, you will use the Jupyter Lab tool that is installed in containe
 
 ## Step 6. Open Jupyter Lab in the Browser using the public IP address of your instance
    ``` URL: http://148.100.X.X:38888```
-    The first page requires you to authenticate before getting to the main Jupyter Lab IDE. Tocken is the one you specified in the podman run command: Your_Token
-
+    The first page requires you to authenticate before getting to the main Jupyter Lab IDE. Tocken by default is set  to ``` Your_Token1 ``` however can be changed by appending these arguments to the docker/porman run command :
+```
+    jupyter notebook \
+    --ip=0.0.0.0 \
+    --NotebookApp.port=38888 \
+    --ServerApp.port=38888 \
+    --ServerApp.token='Your_Token1' \
+    --ServerApp.allow_origin='*'
+```
 ![alt text](images/jupyter_login.png "ML_Demo")
 
 ## Step 7. Run Demo notebooks 
