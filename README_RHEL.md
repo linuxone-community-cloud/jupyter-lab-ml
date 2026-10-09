@@ -1,4 +1,4 @@
-The following steps replace steps 4-17 in the main README in order to use Red Hat Enterprise Linux and podman.
+The following steps replace steps 4-7 in the main README in order to use Red Hat Enterprise Linux and podman.
 
 ## Step 4. Open a secure shell connection and install podman
 

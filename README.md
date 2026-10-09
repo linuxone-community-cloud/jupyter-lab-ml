@@ -55,6 +55,7 @@ Note: For details or troubleshooting refer the official documentation from IBM L
 
 ## Step 3. Create your Ubuntu 24.04 instance of Linux VM
 
+(check [here](README_RHEL.md) for RHEL 9.6)
 Note: For details or troubleshooting refer the official documentation from IBM LinuxONE Community Cloud  [here](https://ibm.biz/BdPcL8)
 
 1. Deploying LinuxONE virtual server.
