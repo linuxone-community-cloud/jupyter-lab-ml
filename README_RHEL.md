@@ -50,7 +50,7 @@ In this section, you will use the Jupyter Lab tool that is installed in containe
 ![alt text](images/jupyter_login.png "ML_Demo")
 
 ## Step 7. Run Demo notebooks 
-Jupyter Lab container comes with 4 demo notebooks and sample data. Once in the Jupyter Lab IDE, left side panel lists the notebooks and CSV data files. Click on each of them to open in the right side panel. 
+Jupyter Lab container comes with 4 demo notebooks and sample data. Once in the Jupyter Lab IDE, left side panel lists the notebooks and CSV data files. Click on each of them to open in the right side panel.  See details in the main [README.md](README.md)
 
 
 ## Step 8. Example #1: Run a notebook with LSTM model to detect fraudlent credit card transactions.

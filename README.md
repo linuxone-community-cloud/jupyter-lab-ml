@@ -1,12 +1,11 @@
 # Running AI/ML in Jupyter Lab on IBM LinuxONE / IBM Z servers
 ## Overview
-AI/ML on IBM Z and LinuxONE lab is designed to demonstrate how popular Python frameworks and Jupyter Lab can be used on IBM Z / IBM LinuxONE. IBM LinuxONE / IBM Z servers are designed to be more powerful than x86, through a combination of processor architecture, clock speed, cache, optimization, and I/O offloading. IBM z17 generation comes with Telum II central processor that has a dedicated on-chip accelerator for AI inference. This design enables real time AI/ML processing embedded directly in transactional workloads. Jupyter Lab is packaged as a container that includes popular ML libraries such as Keras, Tensorflow, PyTorch, XGBoost, and SciKit-Learn. It also comes with several ML examples and sample data to train and validate the models.
+AI/ML on IBM Z and LinuxONE lab is designed to demonstrate how popular Python frameworks and Jupyter Lab can be used on IBM Z / IBM LinuxONE. IBM LinuxONE / IBM Z servers are designed to be more powerful than x86, through a combination of processor architecture, clock speed, cache, optimization, and I/O offloading. IBM z17 generation comes with Telum II central processor that has a dedicated on-chip accelerator for AI inference. This design enables real time AI/ML processing embedded directly in transactional workloads. Jupyter Lab is packaged as a container that includes popular AI/ML libraries such as Llama.cpp, Keras, Tensorflow, PyTorch, XGBoost, and SciKit-Learn. It also comes with several ML examples and sample data to train and validate the models.
 
    1. First example demonstrates how LSTM model is used to detect fraudlent credit card transactions. 
    2. Second example is a notebook with client retention analysis using SciKit-Learn.
-   3. Third example demonstrates MNIST handwritten digits recogniton using Keras and Tensorflow.
-   4. Fourth example, demonstrate exporting of the trained model to portable ONNX format for inferencing in a hypothetical production deployment.
-   5. The Fifth example demonstrates xxxxxxxxxxxxxxxxxxxxxx
+   3. Third example demonstrates MNIST handwritten digits recogniton using Keras and Tensorflow. As well as it demonstrate exporting of the trained model to portable ONNX format for inferencing in a hypothetical production deployment.
+   4. The Fourth example demonstrates how a hybrid AI (ML + LLM) approach can be applied to loan approval workflows on IBM LinuxONE
 
 
 ## Architecture
@@ -23,8 +22,7 @@ AI/ML on IBM Z and LinuxONE lab is designed to demonstrate how popular Python fr
 7. Example #1: Run a transactions fraud detection notebook.
 8. Example #2: Run a client retention analysis notebook.
 9. Example #3: Run a MNIST handwritten digits recogniton notebook.
-10. Example #4: Export the trained model to a portable ONNX format.
-11. Example #5: Run xxxxxxxxxxxxxxxxxx
+10. Example #4: Run predictive and generative AI notebook for loan decisioning 
 
 ## Step 1. Sign up for an IBM LinuxONE Community Cloud account
 
@@ -139,12 +137,13 @@ Jupyter Lab container comes with 4 demo notebooks and sample data. Once in the J
 
 ## Step 8. Example #1: Run a notebook with LSTM model to detect fraudlent credit card transactions.
 This Demo notebook performs a training and validation of a credit card fraud detection model in Keras/Tensorflow.  
- Refer **'Fraud_LSTM_Keras_TF.ipynb'** notebook and csv dataset included in the Jupyter Lab environment.   
+![Fraud LSTM notebook](images/fraud-lstm.png) 
+Refer **'Fraud_LSTM_Keras_TF.ipynb'** notebook and csv dataset included in the Jupyter Lab environment.   
 
 
 ## Step 9. Example #2: Run a client retention analysis notebook.
 
-This Demo notebook runs Random Forest ML on IBM LinuxONE accessing data from CSV files. The data in customer CSV consists of 6,001 rows of customer information.  The data in transaction CSV consists of 20,000 rows of transaction data. The data is transformed and joined in a Pandas DataFrame, which is used to perform exploratory analyses. A Random Forest algorithm is then used to predict customer churn.
+This Demo notebook runs Random Forest ML on IBM LinuxONE accessing data from CSV files. The data in customer CSV consists of 6,001 rows of customer information.  The data in transaction CSV consists of 20,000 rows of transaction data. The data is transformed and joined in a Pandas DataFrame, which is used to perform exploratory analyses. A Random Forest algorithm is then used to predict customer churn. This demo notebooks also contain steps to export the trained ML model into portable open format - PMML.
 
 1. Click **'Churn_Scikit_PyTorch.ipynb'**
 
@@ -170,7 +169,7 @@ The environment is divided into input cells labeled with **‘In [#]:’**.
 
 
 ## Step 10. Example #3: Run a MNIST handwritten digits recogniton notebook.
-This Demo notebook performs single digit recognition using MNIST dataset and neural network model in Tensorflow.  
+This Demo notebook performs single digit recognition using MNIST dataset and neural network model in Tensorflow.  This Demo notebooks also contain steps to export the trained ML model into portable open format - ONNX.
 
 1. Click **'Digit_Class_TensorFlow.ipynb'**
 
@@ -194,13 +193,15 @@ The environment is divided into input cells labeled with **‘In [#]:’**.
     Check the explanation of each Cell and The output from it.
     Continue stepping trhouth the notebook
 
-## Step 11. Example #4: Export trained model to a portable PMML or ONNX format.
-Both Demo notebooks contain steps to export the trained ML model into portable open formats either PMML or ONNX. sklearn2pmml and tf2onnz convert models in portable format which can be then used to compute predictions with another backend on a different platform. Such as training can be done on an x86 system and then inference on IBM LinuxONE. 
-![alt text](images/model-to-onnx.png "Model export to ONNX")
+5. Export the trained model into ONNX format for portability.
+![ONNX export](images/model-to-onnx.png "Model export to ONNX")
+    
+    Such as training can be done on an x86 system and then exported to ONNX for inference on IBM LinuxONE. 
 
-## Step 12. Example #5: Run a loan approval notebook.
-This Demo notebook demonstrates a loan approval workflow on IBM LinuxONE. The notebook analyzes financial documents and relevant policies to provide a recommendation.
 
+## Step 11. Example #4: Run a loan approval notebook.
+This Demo notebook demonstrates a loan approval workflow on IBM LinuxONE. The notebook analyzes financial documents and relevant policies to that are scored, processed via RAG and fed to IBM granite model on Llama.cpp to provide a recommendation.
+![LLM ourtput](images/llm-generated-explanation.png)
 Refer to **'Loan_Approval_Demo.ipynb'** notebook and sample data included.
 
 # Frequently Asked Questions
