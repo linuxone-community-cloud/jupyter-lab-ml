@@ -116,6 +116,8 @@ In this section, you will use the Jupyter Lab tool that is installed in containe
     -d registry.linuxone.cloud.marist.edu/l1cc/jupyterlab-image-s390x:latest
 
 ``` 
+    - **NOTE:**  To check the container is running: ```docker ps```
+
 3. Open TCP port 38888 on the firewall: ```sudo iptables -I INPUT -p tcp --dport 38888 -j ACCEPT```
 
 4. (Optional) To make the above firewall changes persistent across reboots, run the following: ```sudo bash -c "iptables-save > /etc/sysconfig/iptables.save"```
