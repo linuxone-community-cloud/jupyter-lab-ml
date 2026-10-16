@@ -68,7 +68,7 @@ AI/ML on IBM Z and LinuxONE lab is designed to demonstrate how popular Python fr
     
 2. Provide instance specifications
     a. **Instance Name**, without any spaces or special characters.
-    b. Desired **Linux image** as **Ubuntu 22.04**.
+    b. Desired **Linux image** as **Ubuntu 24.04**.
     c. **SSH key** to use.
     d. Verify that all the information is correct and click **Create**.
 
