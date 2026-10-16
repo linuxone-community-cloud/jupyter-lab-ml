@@ -1,7 +1,6 @@
 The following steps replace steps 3-7 in the main README in order to use Red Hat Enterprise Linux and podman.
 ## Step 3. Create your Red Hat 9.8 instance of Linux VM
 
-(check [here](README_RHEL.md) for RHEL 9.8)
 **NOTE:**  For details or troubleshooting refer the official documentation from IBM LinuxONE Community Cloud  [here](https://ibm.biz/BdPcL8)
 
 1. Deploying LinuxONE virtual server.
