@@ -12,7 +12,8 @@ The following steps replace steps 4-7 in the main README in order to use Red Hat
 2. Ensure that you have the SSH private key used to deploy the server. 
     
 3. Use SSH to access the Linux guest.
-    ```ssh linux1@148.100.xx.xx```
+    ```ssh -i <your_key>.pem linux1@148.100.xx.xx```
+    - **NOTE:**  Make sure to set permissions on the key file with ```chmod 600 <your_key>.pem```
 
 4. Install podman: ```sudo dnf -y install podman```
 

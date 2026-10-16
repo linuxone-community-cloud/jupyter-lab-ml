@@ -26,7 +26,7 @@ AI/ML on IBM Z and LinuxONE lab is designed to demonstrate how popular Python fr
 
 ## Step 1. Sign up for an IBM LinuxONE Community Cloud account
 
-Note: Refer the official documentation from IBM LinuxONE Community Cloud  [here](https://ibm.biz/BdPcL8)
+**NOTE:**  Refer the official documentation from IBM LinuxONE Community Cloud  [here](https://ibm.biz/BdPcL8)
 
 1. If you have not done so already, go to [IBM LinuxONE Community Cloud](https://linuxone.cloud.marist.edu/#/register?flag=VM) and register for a free trial account. 
 2. Select **Register** link. 
@@ -38,7 +38,7 @@ Note: Refer the official documentation from IBM LinuxONE Community Cloud  [here]
 
 ## Step 2. Log in to the Self Service Portal
 
-Note: For details or troubleshooting refer the official documentation from IBM LinuxONE Community Cloud  [here](https://ibm.biz/BdPcL8)
+**NOTE:** For details or troubleshooting refer the official documentation from IBM LinuxONE Community Cloud  [here](https://ibm.biz/BdPcL8)
 
 1. Open a web browser and access the [IBM LinuxONE Community Cloud](https://linuxone.cloud.marist.edu/#/login). 
    
@@ -56,7 +56,7 @@ Note: For details or troubleshooting refer the official documentation from IBM L
 ## Step 3. Create your Ubuntu 24.04 instance of Linux VM
 
 (check [here](README_RHEL.md) for RHEL 9.6)
-Note: For details or troubleshooting refer the official documentation from IBM LinuxONE Community Cloud  [here](https://ibm.biz/BdPcL8)
+**NOTE:**  For details or troubleshooting refer the official documentation from IBM LinuxONE Community Cloud  [here](https://ibm.biz/BdPcL8)
 
 1. Deploying LinuxONE virtual server.
     a. Go to the **Home page**, **Service Catalog** section and **Virtual Servers** service.
@@ -89,6 +89,7 @@ Note: For details or troubleshooting refer the official documentation from IBM L
     
 3. Use SSH to access the Linux guest.
     ```ssh -i <your_key>.pem linux1@148.100.xx.xx```
+    - **NOTE:**  Make sure to set permissions on the key file with ```chmod 600 <your_key>.pem```
 
 4. Download the latest docker installer script and run it
     ```curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh```
